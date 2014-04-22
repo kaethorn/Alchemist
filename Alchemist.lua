@@ -58,15 +58,15 @@ function Alchemist.print_combinations()
 end
 
 function Alchemist.get_num_reagent_slots()
-    --local has_three_slot = not ZO_AlchemyTopLevelSlotContainerReagentSlot3:IsControlHidden()
-    --return has_three_slot and 3 or 2
-    --
+    local has_three_slot = not ZO_AlchemyTopLevelSlotContainerReagentSlot3:IsControlHidden()
+    return has_three_slot and 3 or 2
+
     -- TODO: The current algorithm can't handle three slots, not sure why I didn't see that
     -- before, but if you have all 18 reagents, there'll be (18 * 17 * 16) + (18 * 17) = 5202
     -- combinations. My computer can handle that, but some computers will probably have a 
     -- bad time!
 
-    return 2
+    -- return 2
 end
 
 function Alchemist.on_start_crafting(event_type, crafting_type)
